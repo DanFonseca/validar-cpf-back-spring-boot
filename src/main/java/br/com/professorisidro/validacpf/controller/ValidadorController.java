@@ -12,7 +12,7 @@ import br.com.professorisidro.validacpf.service.Validador;
 public class ValidadorController {
 	
 	@GetMapping("/validacpf")
-	public String validaCPF(@RequestParam String cpf) {
+	public String validaCPF(@RequestParam (required = false) String cpf) {
 		if (Validador.isCPF(cpf)) {
 			return "{\"status\": \"valido\"}";
 		}
